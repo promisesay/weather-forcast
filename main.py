@@ -17,8 +17,8 @@ st.subheader(f"{weather} of {place} in next {slid_bar} days:")
 
 
 # getting the data and times of the day
-try:
-    if place:
+if place:
+    try:
         data = get_data(place=place, forcast_days=slid_bar)
 
         if weather == "temperature":
@@ -30,12 +30,12 @@ try:
 
         if weather == "sky":
             data = [dict["weather"][0]["main"] for dict in data]
-    #        time = [dict["dt_txt"] for dict in data]
+            #        time = [dict["dt_txt"] for dict in data]
             conditions_paths = {"Clear": "images/clear.png", "cloud": "images/clear.png",
                                 "Rain": "images/rain.png", "Snow": "images/snow.png"}
             sky_conditions = [conditions_paths[conditions] for conditions in data]
             print(conditions_paths)
             print(sky_conditions)
             st.image(image=sky_conditions, width=112)
-except KeyError:
-    st.header(body="what the fuck is that :+1", help="check your place input")
+    except KeyError:
+        st.header(body="what the fuck is that :+1", help="check your place input")
