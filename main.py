@@ -38,4 +38,4 @@ if place:
             print(sky_conditions)
             st.image(image=sky_conditions, width=112, caption=time)
     except KeyError:
-        st.header(body="what the fuck is that :+1", help="check your place input")
+        st.header(body="what the hook is that :+1", help="check your place input")
