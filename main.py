@@ -9,7 +9,7 @@ st.header("weather forcast for the future days")
 place = st.text_input("place:")
 
 slid_bar = st.slider("forcast days:", min_value=1, max_value=5,
-                     help="the amount of future days data that will be calculated")
+                     help="number of days that will be forcast")
 
 weather = st.selectbox("select data to view", ("temperature", "sky"))
 
