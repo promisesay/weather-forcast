@@ -15,5 +15,5 @@ def get_data(place, forcast_days=1):
 
 
 if __name__ == "__main__":
-    porpose = get_data(place="tirsg", forcast_days=4)
+    porpose = get_data(place="tehran", forcast_days=4)
     print(porpose)

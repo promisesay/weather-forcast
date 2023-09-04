@@ -29,13 +29,13 @@ if place:
             st.plotly_chart(figur)
 
         if weather == "sky":
-            data = [dict["weather"][0]["main"] for dict in data]
-            #        time = [dict["dt_txt"] for dict in data]
-            conditions_paths = {"Clear": "images/clear.png", "cloud": "images/clear.png",
+            time = [dict["dt_txt"] for dict in data]
+            conditions_paths = {"Clear": "images/clear.png", "Clouds": "images/clear.png",
                                 "Rain": "images/rain.png", "Snow": "images/snow.png"}
+            data = [dict["weather"][0]["main"] for dict in data]
             sky_conditions = [conditions_paths[conditions] for conditions in data]
             print(conditions_paths)
             print(sky_conditions)
-            st.image(image=sky_conditions, width=112)
+            st.image(image=sky_conditions, width=112, caption=time)
     except KeyError:
         st.header(body="what the fuck is that :+1", help="check your place input")
